@@ -41,3 +41,19 @@ This project documents the provisioning, deployment, and baseline configuration 
 2. Executed package update index command:
    ```bash
    sudo apt update && sudo apt upgrade -y
+2.
+Troubleshooting Mirror Errors:
+Encountered temporary package fetch failures ( 404 / Hash Sum mismatch) from regional Ubuntu archive mirrors.
+Resolution: Verified outbound network connectivity via VirtualBox NAT interface, re-synchronized APT cache sources ( sudo apt update --fix-missing), and successfully completed all pending package upgrades.
+• Key Skills Demonstrated
+O
+Virtualization Management: Hypervisor resource planning, virtual disk management, and guest additions optimization.
+Linux CLI Proficiency: Terminal navigation, package management ( apt ), and user privilege management ( sudo).
+Technical Troubleshooting: Reading CLI error logs, resolving package dependency/ mirror errors, and verifying system state post-reboot.
+
+Future Enhancements
+Networking: Switch network adapter from
+NAT to Bridged Networking for local network visibility.
+SSH & Remote Management: Install and configure openssh-server for remote CLI management and key-based authentication.
+Automation: Writing Bash scripts to automate routine system maintenance and log rotation.
+   
