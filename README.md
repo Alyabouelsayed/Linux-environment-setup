@@ -1,48 +1,43 @@
-# Linux Environment Setup
+# 🐧 Ubuntu Linux Virtualization & System Administration Lab
 
-## Overview
+## 📌 Overview
+This project documents the provisioning, deployment, and baseline configuration of an **Ubuntu 26.04 LTS** server/desktop environment inside an **Oracle VirtualBox** hypervisor. It demonstrates hands-on skills in virtual hardware allocation, Linux system setup, command-line interface (CLI) administration, package repository management, and basic Linux troubleshooting.
 
-This project documents my hands-on setup of an Ubuntu 26.04 LTS virtual machine using Oracle VirtualBox.
+---
 
-The goal of this lab was to build a Linux environment for learning and practicing IT support, system administration, troubleshooting, and networking concepts.
+## 🛠️ System Architecture & Specifications
+* **Hypervisor:** Oracle VirtualBox
+* **Guest OS:** Ubuntu 26.04 LTS (x86_64)
+* **Virtual Storage:** 40 GB Dynamically Allocated VDI
+* **Memory (RAM):** 4 GB Allocated
+* **CPU Allocation:** 2 vCPUs
+* **Network Adapter:** NAT (Network Address Translation)
+* **Graphics Controller:** VMSVGA (with VirtualBox Guest Additions)
 
-## Environment
+---
 
-- Hypervisor: Oracle VirtualBox
-- Operating System: Ubuntu 26.04 LTS
-- Virtual Disk: 40 GB
-- Memory: 4 GB RAM
-- Processors: 2
-- Network: NAT
-- Graphics Controller: VMSVGA
+## 🎯 Lab Objectives
+* **Virtual Machine Provisioning:** Allocate and configure hardware resources optimized for Ubuntu 26.04 LTS.
+* **Linux OS Installation:** Complete the clean installation and initial user setup wizard.
+* **CLI & Package Management:** Utilize `apt` package manager to update repository indexes and upgrade system components.
+* **System Diagnostics:** Analyze and resolve APT package mirror fetch errors during initial updates.
 
-## Installation
+---
 
-The virtual machine was configured and Ubuntu 26.04 LTS was installed as the guest operating system.
+## 📑 Step-by-Step Implementation Guide
 
-After installation, I completed the initial Ubuntu setup, configured the user account, and verified that the system booted successfully.
+### Phase 1: Virtual Machine Creation & Resource Allocation
+1. Created a new 64-bit Linux virtual machine instance in **Oracle VirtualBox**.
+2. Configured CPU cores (2 vCPUs), system memory (4 GB RAM), and dynamic virtual disk storage (40 GB).
+3. Attached the **Ubuntu 26.04 LTS ISO** image to the virtual optical drive and configured boot priority.
 
-## System Updates
+### Phase 2: OS Installation & Base Setup
+1. Booted into the Ubuntu installer and initialized system installation.
+2. Formatted virtual disk partitions and created the administrative root/sudo user account.
+3. Completed initial system reboot and verified display driver resolution via VMSVGA driver configuration.
 
-After installation, I updated the system package information and installed available updates using:
-
-`sudo apt update`
-
-During the update process, some packages initially returned download errors from the Ubuntu mirror. I ran the update process again and verified that the packages were successfully configured.
-
-## What I Practiced
-
-- Creating and configuring a virtual machine
-- Installing Ubuntu Linux
-- Basic Linux system configuration
-- Working with the terminal
-- Updating packages with APT
-- Reading and troubleshooting terminal errors
-- Rebooting and verifying the system
-- Working with VirtualBox networking and virtual hardware
-
-## Result
-
-Ubuntu 26.04 LTS is installed and running successfully inside Oracle VirtualBox.
-
-This environment will be used for future Linux, networking, system administration, and IT support labs.
+### Phase 3: CLI Administration & APT Troubleshooting
+1. Opened the Linux terminal (`bash`) to execute system maintenance commands.
+2. Executed package update index command:
+   ```bash
+   sudo apt update && sudo apt upgrade -y
